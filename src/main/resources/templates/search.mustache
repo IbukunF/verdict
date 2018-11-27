@@ -1,0 +1,31 @@
+{{> header}}
+
+<div class="container no-pad-bot" id="main-content">
+    <h3 class="header center">Food Search Results</h3>
+    <div class="row center">
+        <h5 class="header col s12 light">These are the top rated restaurants based on your cuisine and location</h5>
+    </div>
+    <div class="row">
+        {{#business}}
+        <div class="col s12 m4">
+            <div class="card result">
+                <div class="card-image">
+                    <img src={{image_url}} height="180">
+                </div>
+                <div class="card-content">
+                    <span class="card-title"><h5>{{name}}</h5></span>
+                    <p>{{location.display_address.0}}, {{location.display_address.1}}</p>
+                </div>
+                <div class="card-action link">
+                    <a href={{url}}>Visit</a>
+                </div>
+            </div>
+        </div>
+        {{/business}}
+    </div>
+</div>
+
+<script>
+    console.log({{business}});
+</script>
+{{> footer}}
