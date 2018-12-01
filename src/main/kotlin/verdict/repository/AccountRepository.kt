@@ -2,7 +2,6 @@ package verdict.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 
-import org.verdict.model.Account
 import verdict.model.Account
 
 
@@ -12,7 +11,7 @@ interface AccountRepository : JpaRepository<Account, Long> {
 
 }
 
-interface JpaRepository<T, U> {
-
-}
+//interface JpaRepository<T, U> {
+//
+//}
 

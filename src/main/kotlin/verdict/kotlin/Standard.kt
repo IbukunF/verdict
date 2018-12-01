@@ -6,4 +6,4 @@ package verdict.kotlin
 
  */
 
-inline fun <T> configure(receiver: T, block: T.() -> Unit) = receiver.block()
+//inline fun <T> configure(receiver: T, block: T.() -> Unit) = receiver.block()
