@@ -14,12 +14,6 @@ import javax.validation.constraints.Size
 data class Account(@Column(name = "email", nullable = false)
                    var email: String,
 
-                   @NaturalId
-                   @Column(name = "username", unique = true, nullable = false)
-                   @NotNull
-                   @Size(min = 3, max = 255)
-                   var username: String = email,
-
                    @Size(min = 8)
                    @get:JsonIgnore
                    @set:JsonProperty

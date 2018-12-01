@@ -7,7 +7,7 @@ import verdict.model.Account
 
 interface AccountRepository : JpaRepository<Account, Long> {
 
-    fun findByUsername(username: String): Account?
+    fun findByEmail(email: String): Account?
 
 }
 

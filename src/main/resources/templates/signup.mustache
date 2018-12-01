@@ -1,0 +1,37 @@
+{{> header}}
+
+<div class="container" id="main-content">
+    <h3 class="header center">{{title}}</h3>
+    <div class="row center">
+        <form action="/signup" method="post">
+            <!--<div class="col s12 m4 l3"></div>-->
+            <div class="card">
+                <p class="card-title">Please fill in your information to create your account</p>
+                <div class="card-content">
+                    <div class="row">
+                        <p class="">First name</p>
+                        <input name="fname" type="text" >
+                        <p class="">Password</p>
+                        <input name="password" type="password" >
+                    </div>
+                    <div class="row">
+                        <p class="">Last name</p>
+                        <input name="lname" type="text" >
+                        <p class="">Confirm password</p>
+                        <input name="password" type="password" >
+                    </div>
+                    <div class="row">
+                        <p class="">Email address</p>
+                        <input name="email" type="email" >
+                    </div>
+                </div>
+                <div class="card-action">
+                    <button type="submit" class="btn waves-effect waves-light"><i class="material-icons right">person</i>Login</button>
+                </div>
+            </div>
+            <!--<div class="col s12 m4 l3"></div>-->
+        </form>
+    </div>
+</div>
+
+{{> footer}}
