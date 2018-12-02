@@ -6,14 +6,28 @@ import org.springframework.ui.Model
 import org.springframework.ui.set
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.servlet.ModelAndView
-import verdict.model.Account
-import verdict.repository.AccountRepository
+import verdict.model.User
+import verdict.repository.UserRepository
 import javax.servlet.http.HttpServletRequest
+import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.GetMapping
+
+
+
+
 
 
 @Controller
 class UserController {
+    @Autowired
+    private val repository: UserRepository? = null
+
+    val allUsers: Iterable<User>
+        @RequestMapping(path = arrayOf("/all"), method = arrayOf(RequestMethod.GET))
+        @ResponseBody
+        get() = repository!!.findAll()
 
     @RequestMapping("/login", method = arrayOf(RequestMethod.GET))
     fun login(model: Model): String {
@@ -28,11 +42,20 @@ class UserController {
     }
 
     @RequestMapping("/signup", method = arrayOf(RequestMethod.POST), consumes = arrayOf(MediaType.APPLICATION_FORM_URLENCODED_VALUE))
-    fun create_account(request: HttpServletRequest, repository: AccountRepository): String {
+    fun create_account(request: HttpServletRequest, model: Model): String {
         val email = request.getParameter("email")
-        val first_name = request.getParameter("fname")
-        val last_name = request.getParameter("lname")
+        val firstName = request.getParameter("fname")
+        val lastName = request.getParameter("lname")
         val pword = request.getParameter("password")
-        return "index"
+        println(email)
+        println(firstName)
+        println(lastName)
+        println(pword)
+
+        val new = User(email, pword, firstName, lastName)
+        repository!!.save(new)
+
+        model["title"] = "Thanks for signing up. Use the form below to log in to your account"
+        return "login"
     }
 }

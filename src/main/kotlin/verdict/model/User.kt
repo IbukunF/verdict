@@ -2,16 +2,12 @@ package verdict.model
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonProperty
-import org.hibernate.annotations.NaturalId
 import javax.persistence.*
-
-import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
-@Entity
-@Table(name = "account")
 
-data class Account(@Column(name = "email", nullable = false)
+@Entity
+data class User(@Column(name = "email", nullable = false)
                    var email: String,
 
                    @Size(min = 8)
@@ -24,8 +20,6 @@ data class Account(@Column(name = "email", nullable = false)
 {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long? = null
 }
-
-annotation class Table(val name: String)
