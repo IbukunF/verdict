@@ -7,7 +7,7 @@ import javax.validation.constraints.Size
 
 
 @Entity
-data class User(@Column(name = "email", nullable = false)
+data class User(@Column(name = "email", nullable = false, unique = true)
                    var email: String,
 
                    @Size(min = 8)

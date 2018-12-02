@@ -35,6 +35,24 @@ class UserController {
         return "login"
     }
 
+    @RequestMapping("/login", method = arrayOf(RequestMethod.POST), consumes = arrayOf(MediaType.APPLICATION_FORM_URLENCODED_VALUE))
+    fun get_account(request: HttpServletRequest, model: Model): String {
+        val email = request.getParameter("email")
+        val pword = request.getParameter("password")
+        println(email)
+        println(pword)
+
+        val user = repository!!.findByEmail(email)
+
+        if (user != null) {
+            println(user.firstName)
+            model["user"] = user
+        }
+        model["title"] = "Welcome to Verdict"
+
+        return "index"
+    }
+
     @RequestMapping("/signup", method = arrayOf(RequestMethod.GET))
     fun signup(model: Model): String {
         model["title"] = "Sign up for a Verdict Account"
@@ -47,10 +65,6 @@ class UserController {
         val firstName = request.getParameter("fname")
         val lastName = request.getParameter("lname")
         val pword = request.getParameter("password")
-        println(email)
-        println(firstName)
-        println(lastName)
-        println(pword)
 
         val new = User(email, pword, firstName, lastName)
         repository!!.save(new)
