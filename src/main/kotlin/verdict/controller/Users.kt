@@ -10,9 +10,7 @@ import verdict.model.User
 import verdict.repository.UserRepository
 import javax.servlet.http.HttpServletRequest
 import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
 
 
 
