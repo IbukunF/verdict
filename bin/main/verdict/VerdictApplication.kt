@@ -2,14 +2,9 @@ package verdict
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
-import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
-class VerdictApplication {
-//    @Bean
-//    fun controller() = HomeController()
-}
-
+class VerdictApplication
 
 fun main(args: Array<String>) {
     runApplication<VerdictApplication>(*args)
