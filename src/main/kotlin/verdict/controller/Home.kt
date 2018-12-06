@@ -18,7 +18,7 @@ import java.util.HashMap
 
 
 @Controller
-class HtmlController {
+class HomeController {
     private val accessToken = "v5_EQxtkFOgZ0yysNs36qHLBEcVgZmK-EpibMYplDPk-EM6QWqN143XlahFDBTkIOBIBLMoSvHXw6uKDYEwf-OcYMvgfkTRPIHuH0U_4Ts33fephSaMrdrsiw_vpW3Yx"
 
     @RequestMapping("/", method = arrayOf(RequestMethod.GET))
