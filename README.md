@@ -23,8 +23,9 @@ Optional Steps:
 7. Scale the application.<br />
   `kubectl scale --replicas=n deployment/verdict-service-deployment` (replace n with desired amount of pods)
   
-  
-
 Here is a link to a demonstration: [DEMO](https://youtu.be/QSIYcegcRCI)
 
+Here is a diagram representing the architecture of our software:
+
+![alt text](https://raw.githubusercontent.com/IbukunF/verdict/master/Verdict_Software_Architecture.PNG)
 
